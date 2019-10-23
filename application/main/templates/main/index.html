@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+{% include 'navigation.html' %}
+{{ title }}
+{% endblock %}
