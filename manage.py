@@ -5,9 +5,11 @@ from application import app
 
 manager = Manager(app)
 
+
 class Debug(Command):
     def run(self):
         app.run(host='0.0.0.0', port=5000, debug=True)
+
 
 class Run(Command):
     def run(self):
