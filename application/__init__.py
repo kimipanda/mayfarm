@@ -1,13 +1,18 @@
-from flask import Flask, render_template
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
-from application.config.config import Config
 from application.main import main_blueprint
 
 # Configure
 app = Flask(__name__)
-app.config.from_object(Config)
+
+if app.config['ENV'] == 'production':
+    app.config.from_object('application.config.config.ProductionConfig')
+else:
+    app.config.from_object('application.config.config.DevelopmentConfig')
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 app.register_blueprint(main_blueprint)

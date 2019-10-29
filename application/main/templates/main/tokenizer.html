@@ -1,9 +1,38 @@
 {% include 'main/index.html' %}
 
-<table width="300px" border="1" cellspacing="0" style="background-color:#cccccc">
-    <tr>
-        <th>토큰</th>
-        <th>갯수</th>
-    </tr>
+<div id="noun-wrapper">
+    <div>
+        <h1>[형태소 분석] 명사 출현빈도</h1>
+        <table border="1" cellspacing="0">
+            <tr>
+                <th>토큰</th>
+                <th>갯수</th>
+            </tr>
+        
+            {% for noun in nouns %}
+            <tr>
+                <td>{{noun.0}}</td>
+                <td>{{noun.1}}</td>
+            </tr>
+            {% endfor %}
+        </table>    
+    </div>
 
-</table>
+    <div>
+        <h1>띄어쓰기 기준 단어 출현빈도</h1>
+        <table border="1" cellspacing="0">
+            <tr>
+                <th>토큰</th>
+                <th>갯수</th>
+            </tr>
+        
+            {% for word in words %}
+            <tr>
+                <td>{{word.0}}</td>
+                <td>{{word.1}}</td>
+            </tr>
+            {% endfor %}
+        </table>    
+    </div>        
+</div>
+

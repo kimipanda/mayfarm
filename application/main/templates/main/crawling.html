@@ -1,1 +1,38 @@
 {% include 'main/index.html' %}
+
+<div id="crawling-wrapper">
+    <div class="crawling-content">
+        <table border="1" cellspacing="0">
+            <tr>
+                <th>제목</th>
+                <th>툴</th>
+                <th>조회수</th>
+                <th>소개1줄</th>
+                <th>키워드</th>
+            </tr>
+
+            {% for repo in repo_list %}
+            <tr>
+                <td>{{ repo.title }}</td>
+                <td>{{ repo.tool }}</td>
+                <td>{{ repo.star }}</td>
+                <td>{{ repo.description }}</td>
+                <td>{{ repo.tag }}</td>
+            </tr>        
+            {% endfor %}
+        </table>
+
+        <form action="{{ url_for('main.github_search') }}" method="GET">
+            <div id="search">
+                <div class="search-component">
+                    <select name="searchBy" id="searchBy">          
+                        <option value="title">제목</option>
+                        <option value="keyword" {% if search_by =='keyword' %} selected {% endif %}>키워드</option>
+                    </select>
+                    <input type="text" id="query" name="query" placeholder="검색어를 입력해주세요" value="">
+                    <button type="submit" class="btn-search">검색</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
