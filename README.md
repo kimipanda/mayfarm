@@ -23,7 +23,7 @@ export FLASK_APP="manage.py"
 # development
 export FLASK_ENV="development"
 # production
-export FLASK_ENV="development"
+export FLASK_ENV="production"
 ```
 
 ### Create DB
