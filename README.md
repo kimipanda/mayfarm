@@ -6,7 +6,7 @@
 
 venv를 사용하여 가상환경을 만들고, 활성화 후에 라이브러리를 설치 한다.
 
-```python
+```
 # 가상환경 만들기
 python -m venv .env
 source ./.env/bin/activate
@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ### Flask 환경설정
 
-```python
+```
 export FLASK_APP="manage.py"
 
 # development
@@ -28,13 +28,13 @@ export FLASK_ENV="development"
 
 ### Create DB
 
-```python
+```
 flask create_db
 ```
 
 ### Create Model
 
-```python
+```
 flask create_model
 ```
 
@@ -42,7 +42,7 @@ flask create_model
 
 Mayfarm 애플리케이션을 실행합니다.
 
-```python
+```
 flask run
 ```
 
@@ -50,6 +50,6 @@ flask run
 
 Github에서 딥러닝 관련 레포를 2페이지까지 크롤링하기
 
-```python
+```
 flask github --keyword=딥러닝 --page=2
 ```
