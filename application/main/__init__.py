@@ -4,6 +4,7 @@ from flask import request
 
 from application.main.token_utils import noun_frequency_count, word_frequency_count
 from application.main.github_utils import get_repo_all, get_repo_filter
+from application.main.word_ar_utils import get_w2v
 
 # Blueprint Configure
 main_blueprint = Blueprint(
@@ -30,7 +31,14 @@ def github_search():
     return render_template('main/crawling.html', repo_list=get_repo_filter(search_by, query), search_by=search_by)
 
 
-@main_blueprint.route('/kmeans', methods=['GET'])
-def kmeans():
+@main_blueprint.route('/word_ar', methods=['GET'])
+def word_ar():
     """ K-Means pasge Route """
-    return render_template('main/kmeans.html')
+    return render_template('main/word_ar.html')
+
+
+@main_blueprint.route('/word_ar/search', methods=['GET'])
+def word_ar_search():
+    """ K-Means pasge Route """
+    query = request.args.get('query')
+    return render_template('main/word_ar.html', word_ar=get_w2v(query))

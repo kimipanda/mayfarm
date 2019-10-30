@@ -1,3 +1,4 @@
+
 def get_repo_all():
     from application.main.model import Github
     return Github.query.all()

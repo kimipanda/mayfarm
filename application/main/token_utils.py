@@ -63,10 +63,10 @@ def word_frequency_count():
 
 
 def get_sentence():
-    from application.main.model import Problems
+    from application.main.model import Problem
     from application import db
 
-    df = read_excel(current_app.config['STATIC_PATH'] + '/res/attach_01.xlsx', names=Problems.problems_model_columns)
+    df = read_excel(current_app.config['STATIC_PATH'] + '/res/attach_01.xlsx', names=Problem.problem_model_columns)
     df.to_sql('problem_table', db.engine.connect(), index=False, if_exists='replace')
 
-    return Problems.query.with_entities(Problems.problem_sentence).all()
+    return Problem.query.with_entities(Problem.problem_sentence).all()

@@ -1,0 +1,30 @@
+{% include 'main/index.html' %}
+
+<div id="word-wrapper">
+    <form action="{{ url_for('main.word_ar_search') }}" method="GET">
+        <div id="word-search">
+            <div class="search-component">
+                <input type="text" id="query" name="query" placeholder="키워드를 입력해주세요" value="">
+                <button type="submit" class="btn-search">분석</button>
+            </div>
+        </div>
+    </form>
+    
+    <div class="word-content">
+        <table border="1" cellspacing="0">
+            <tr>
+                <th>#</th>
+                <th>word2vec</th>
+                <th>AR</th>
+            </tr>
+
+            {% for word in word_ar %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ word.0 }}</td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>

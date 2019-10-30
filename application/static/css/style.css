@@ -91,6 +91,35 @@
 }
 
 
+#word-search {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+    display: inline-flex;
+}
+.word-content {
+    padding: 2.3rem 0;
+}
+.word-content table {
+    width: 75%;
+    margin: 0 auto;
+    border: none;
+    border-collapse: collapse;
+}
+.word-content th, .word-content td {
+    width: 26%;
+    padding: 0.8rem 0;
+    border: 0;
+    border-bottom: 1px solid #e9ecef;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+.word-content th {
+    color: #364fc7;
+    padding: 1rem 0;
+}    
+
+
 table > tbody > tr > th {
     background-color: #cccccc;
 }
