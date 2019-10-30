@@ -17,7 +17,6 @@ def create_movie_model():
     result = []
     for data in df.values:
         if not isNaN(data[1]):
-            print(' '.join(data[1].split(',')))
             result.append(' '.join(data[1].split(',')))
 
     output = ' '.join(result)
